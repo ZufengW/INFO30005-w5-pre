@@ -1,5 +1,5 @@
 # INFO30005 2019 workshop week 5
-Sample solution
+Express + Mongoose. Sample solution
 
 ## Set up
 Clone this repo.
@@ -22,7 +22,28 @@ Here is one way to run the app and provide an environment variable.
 DB=YOUR_MONGODB_URI nodemon app
 ```
 
+Then you can visit the website in your browser: http://localhost:3000/users/
+(This is like sending GET requests)
 
+Use a REST client such as [Postman](https://www.getpostman.com/) or Advanced REST Client to send http requests to your server.
+
+## Structure
+```
+INFO30005-w5-pre
+├─┬ controllers
+│ └── controller.js     Defines callback functions for routes
+├─┬ models              Mongoose stuff
+│ ├── db.js             Set up connection to database
+│ └── users.js          User model
+├── node_modules        Contains dependencies. Don't commit this file.
+├─┬ routes              
+│ └── users.js          Defines CRUD routes for users
+├── .gitignore          Specify things you don't want version-controlled
+├── app.js              Runs the app
+├── package.json        Contains info about the project
+├── package-lock.json   Contains more info about dependencies (don't edit this directly)
+└── README.md           Contains info about the project for humans to read
+```
 
 
 ## Q and A
@@ -33,6 +54,13 @@ You wouldn't want people to find out this info if you make your repo public.
 #### What is `() => {}`?
 It is an [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), which is a alternative to regular function expressions.
 It can be more compact than writing `function`.
+
+#### Why `const`?
+* [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) is for declaring constants.
+Constants are block-scoped and can't be reassigned or redeclared.
+Use `const` wherever possible because it's the most restrictive.
+* `let` is like`const`, except they can be reassigned.
+* Avoid using `var` because the variable can be reassigned, redeclared and it is *function* scope.
 
 #### What does `process.env.PORT || 3000` do?
 `||` is [logical OR](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators).

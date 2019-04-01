@@ -7,10 +7,11 @@ mongoose.connect(DB_URL,
     {useNewUrlParser: true},
     (err) => {
       if (err) {
-        console.log('failed to connect to db:', DB_URL);
+        console.log('failed to connect to database:', DB_URL);
       } else {
-        console.log('connected to DB');
+        console.log('connected to database');
       }
     });
 
-require('./users');  // naming?
+// Set up user model
+require('./users');
