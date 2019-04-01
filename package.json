@@ -1,0 +1,24 @@
+{
+  "name": "info30005-w5-pre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZufengW/INFO30005-w5-pre.git"
+  },
+  "author": "Zufeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZufengW/INFO30005-w5-pre/issues"
+  },
+  "homepage": "https://github.com/ZufengW/INFO30005-w5-pre#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.20"
+  }
+}
