@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
-// don't hard-code the database url
-const DB_URL = process.env.DB || 'NOPE';
+// Don't hard-code the database URI
+// Note that 'mongodb://localhost:27017/myapp' is a sample local URI
+const DB_URL = process.env.DB || 'mongodb://localhost:27017/myapp';
 
 mongoose.connect(DB_URL,
     {useNewUrlParser: true},
