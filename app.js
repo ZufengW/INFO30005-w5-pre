@@ -9,8 +9,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 require('./models/db.js');
 
 // set up routes
-const userRoutes = require('./routes/users');
-app.use('/users', userRoutes);
+const userRouter = require('./routes/users');
+// the user routes are added onto the end of '/users'
+app.use('/users', userRouter);
 
 
 app.get('/', (req, res) => {
