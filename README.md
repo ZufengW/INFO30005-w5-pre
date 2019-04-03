@@ -62,6 +62,21 @@ Use `const` wherever possible because it's the most restrictive.
 * `let` is like`const`, except they can be reassigned.
 * Avoid using `var` because the variable can be reassigned, redeclared and it is *function* scope.
 
+#### How do you get a database connection string?
+One possibility is http://mongodb.com/atlas, where you can get a free-tier cluster in the cloud.
+
+Summary of steps:
+* Make an account
+* Build a new cluster
+  * (e.g. AWS, Singapore, M0 tier)
+* Add a user to it with read and write access
+* Whitelist your IP addresses (or allow global access, which is easier)
+* Overview > Connect > Connect your application.
+  * Copy the connection string.
+  * Make sure to substitute in the user's password. The password needs to be [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding)
+  
+It's also possible to get MongoDB running locally on your machine.
+
 #### What does `process.env.PORT || 3000` do?
 `||` is [logical OR](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators).
 If the left side (`process.env.PORT`) evaluates to something falsy (such as `undefined`), then the entire expression evaluates to the right side (`3000`).
